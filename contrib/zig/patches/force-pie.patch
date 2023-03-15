@@ -1,0 +1,12 @@
+diff --git a/build.zig b/build.zig
+index 496c63a1c..8b64f4cf3 100644
+--- a/build.zig
++++ b/build.zig
+@@ -159,6 +159,7 @@ pub fn build(b: *Builder) !void {
+
+     exe.stack_size = stack_size;
+     exe.strip = strip;
++    exe.pie = true;
+     exe.sanitize_thread = sanitize_thread;
+     exe.build_id = b.option(bool, "build-id", "Include a build id note") orelse false;
+     exe.install();
